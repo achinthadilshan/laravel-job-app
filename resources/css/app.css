@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body-height {
+    min-height: calc(100vh - 7.75rem);
+}
+
+@media (min-width: 768px) {
+    .body-height {
+        min-height: calc(100vh - 9.75rem);
+    }
+}
