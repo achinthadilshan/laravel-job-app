@@ -37,17 +37,7 @@
                     <span>{{ $job->city }}</span>
                 </li>
             </ul>
-            <ul class="flex flex-wrap items-center gap-1">
-                <li>
-                    <a href="#" class="px-3 py-1 text-sm leading-none text-white rounded-2xl bg-slate-700">Laravel</a>
-                </li>
-                <li>
-                    <a href="#" class="px-3 py-1 text-sm leading-none text-white rounded-2xl bg-slate-700">Python</a>
-                </li>
-                <li>
-                    <a href="#" class="px-3 py-1 text-sm leading-none text-white rounded-2xl bg-slate-700">React</a>
-                </li>
-            </ul>
+            <x-tags :tagsCSV="$job->tags" />
             <div class="flex items-end grow">
                 <div class="text-xs text-slate-400 dark:text-slate-600">Posted on {{ $job->created_at }}</div>
             </div>
