@@ -10,32 +10,31 @@
                 Back
             </a>
             <div class="flex flex-col gap-3 md:flex-row md:gap-4">
-                <img src="https://picsum.photos/200" alt="" class="object-cover object-center w-16 h-16 rounded-full">
+                <img src="{{ $job->image }}" alt="" class="object-cover object-center w-16 h-16 rounded-full">
                 <div class="flex flex-col gap-1">
-                    <a href="#" class="text-xl font-medium leading-none text-slate-900 dark:text-white">Senior
-                        Software
-                        Developer - Laravel</a>
-                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">Xypherlabs</p>
+                    <a href="#"
+                        class="text-xl font-medium leading-none text-slate-900 dark:text-white">{{ $job->title }}</a>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">{{ $job->company }}</p>
                 </div>
             </div>
             <ul>
                 <li class="flex gap-2 text-slate-600 dark:text-slate-400">
                     <i class="bi bi-envelope"></i>
-                    <a href="mailto:test@test.com">test@test.com</a>
+                    <a href="mailto:test@test.com">{{ $job->email }}</a>
                 </li>
                 <li class="flex gap-2 text-slate-600 dark:text-slate-400">
                     <i class="bi bi-globe"></i>
-                    <a href="#" target="_blank">www.test.com</a>
+                    <a href="{{ $job->website }}" target="_blank">{{ $job->website }}</a>
                 </li>
             </ul>
             <ul class="flex gap-4">
                 <li class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                     <i class="bi bi-briefcase"></i>
-                    <span>Fulltime</span>
+                    <span>{{ $job->type }}</span>
                 </li>
                 <li class="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                     <i class="bi bi-geo-alt"></i>
-                    <span>Colombo</span>
+                    <span>{{ $job->city }}</span>
                 </li>
             </ul>
             <ul class="flex flex-wrap items-center gap-1">
@@ -50,15 +49,10 @@
                 </li>
             </ul>
             <div class="flex items-end grow">
-                <div class="text-xs text-slate-400 dark:text-slate-600">Posted on 08/12/23</div>
+                <div class="text-xs text-slate-400 dark:text-slate-600">Posted on {{ $job->created_at }}</div>
             </div>
             <hr>
-            <p class="text-slate-900 dark:text-slate-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                praesentium totam, esse ipsum fuga odit deserunt commodi rerum fugit illo autem maiores tempora minima
-                explicabo nemo eius, natus voluptatem perspiciatis!</p>
-            <p class="text-slate-900 dark:text-slate-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                praesentium totam, esse ipsum fuga odit deserunt commodi rerum fugit illo autem maiores tempora minima
-                explicabo nemo eius, natus voluptatem perspiciatis!</p>
+            <p class="text-slate-900 dark:text-slate-400">{{ $job->description }}</p>
         </div>
     </section>
 @endsection
