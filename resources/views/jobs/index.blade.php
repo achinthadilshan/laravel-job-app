@@ -3,7 +3,7 @@
 @section('content')
     {{-- hero section --}}
     <section class="bg-white dark:bg-slate-900">
-        <form>
+        <form action="/">
             <div class="max-w-screen-sm px-4 py-16 mx-auto">
                 <h1 class="mb-4 text-3xl font-extrabold leading-none text-center dark:text-white text-slate-800">Igniting
                     Opportunities,
@@ -17,7 +17,7 @@
                     <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
                         <i class="bi bi-search text-slate-500 dark:text-slate-400"></i>
                     </div>
-                    <input type="search" id="job-search-input"
+                    <input type="search" name="search" id="job-search-input"
                         class="block w-full p-4 text-sm border rounded-lg text-slate-900 border-slate-300 ps-10 bg-slate-50 focus:ring-slate-500 focus:border-slate-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                         placeholder="Search Jobs..." required>
                     <button type="submit"

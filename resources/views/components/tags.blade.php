@@ -1,7 +1,7 @@
 @props(['tagsCSV'])
 
 @php
-    $tags = explode(',', $tagsCSV);
+    $tags = explode(',', trim($tagsCSV));
 @endphp
 
 <ul class="flex flex-wrap items-center gap-1">
