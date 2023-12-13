@@ -23,6 +23,9 @@
             <ul
                 class="flex flex-col p-4 mt-4 font-medium border rounded-lg border-slate-100 md:p-0 bg-slate-50 md:gap-1 md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-slate-800 md:dark:bg-transparent dark:border-slate-700">
                 <li>
+                    <a href="{{route('jobs.create')}}" class="block px-3 py-2 text-slate-900 dark:text-white ">Create a Job</a>
+                </li>
+                <li>
                     <a href="#" class="block px-3 py-2 text-slate-900 dark:text-white ">Sign In</a>
                 </li>
                 <li>

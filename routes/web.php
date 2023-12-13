@@ -24,6 +24,14 @@ use Illuminate\Support\Facades\Route;
 // update - Update listing
 // destroy - Delete listing  
 
+// all jobs
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
 
+// job create form
+Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
+
+// store job data
+Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
+
+// single job
 Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');

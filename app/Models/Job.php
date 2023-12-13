@@ -9,6 +9,8 @@ class Job extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['title', 'image', 'company', 'email', 'website', 'type', 'city', 'tags', 'description'];
+
     public function scopeFilter($query, array $filters)
     {
         if ($filters['tag'] ?? false) {
