@@ -5,7 +5,7 @@
     <div class="flex flex-col gap-3 xl:flex-row xl:gap-4">
         <img src="{{ $job->image }}" alt="" class="object-cover object-center w-16 h-16 rounded-full">
         <div class="flex flex-col gap-1">
-            <a href="/jobs/{{ $job->id }}"
+            <a href="{{ route('jobs.show', ['job' => $job]) }}"
                 class="text-xl font-medium leading-none text-slate-900 dark:text-white">{{ $job->title }}</a>
             <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">{{ $job->company }}
             </p>

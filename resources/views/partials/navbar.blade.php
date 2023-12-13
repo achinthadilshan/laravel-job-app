@@ -1,6 +1,6 @@
 <nav class="fixed top-0 z-20 w-full bg-white border-b border-slate-200 dark:bg-slate-900 start-0 dark:border-slate-600">
     <div class="flex flex-wrap items-center max-w-screen-xl p-4 mx-auto md:gap-6">
-        <a href="#" class="text-2xl font-semibold grow whitespace-nowrap dark:text-white text-slate-800">JOBs
+        <a href="{{route('jobs.index')}}" class="text-2xl font-semibold grow whitespace-nowrap dark:text-white text-slate-800">JOBs
         </a>
         <div class="flex gap-2 md:order-2">
             <button id="theme-toggle" type="button"
