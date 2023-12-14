@@ -10,6 +10,9 @@
     {{-- bootstrap icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 
+    {{-- Alpine Js --}}
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) &&
@@ -37,6 +40,10 @@
         {{-- footer --}}
         @include('partials.footer')
     </main>
+
+    @if (session('status'))
+        <x-alert :message="session('status')" />
+    @endif
 
     {{-- footer --}}
     @yield('footer')

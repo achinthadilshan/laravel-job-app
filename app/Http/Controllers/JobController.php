@@ -34,6 +34,6 @@ class JobController extends Controller
     {
         Job::create($request->validated());
 
-        return redirect('/');
+        return redirect()->route('jobs.index')->with('status', 'Job created successfully!');
     }
 }
