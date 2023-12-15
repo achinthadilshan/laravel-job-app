@@ -3,7 +3,8 @@
 <div
     class="flex flex-col gap-4 p-4 bg-white border rounded-lg shadow-lg border-slate-100 dark:border-slate-800 dark:bg-slate-900">
     <div class="flex flex-col gap-3 xl:flex-row xl:gap-4">
-        <img src="{{ $job->image }}" alt="" class="object-cover object-center w-16 h-16 rounded-full">
+        <img src="{{ $job->image ? asset('storage/' . $job->image) : asset('images/no-image.png') }}" alt=""
+            class="object-cover object-center w-16 h-16 rounded-full">
         <div class="flex flex-col gap-1">
             <a href="{{ route('jobs.show', ['job' => $job]) }}"
                 class="text-xl font-medium leading-none text-slate-900 dark:text-white">{{ $job->title }}</a>

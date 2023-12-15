@@ -18,7 +18,7 @@ class JobFactory extends Factory
     {
         return [
             'title' => fake() -> sentence(),
-            'image' => 'https://picsum.photos/200',
+            // 'image' => 'https://picsum.photos/200', (nullable)
             'company' => fake() -> sentence(),
             'email' => 'test@test.com',
             'website' => 'https://www.test.com/',

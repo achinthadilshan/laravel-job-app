@@ -10,7 +10,7 @@
                 Back
             </a>
             <div class="flex flex-col gap-3 md:flex-row md:gap-4">
-                <img src="{{ $job->image }}" alt="" class="object-cover object-center w-16 h-16 rounded-full">
+                <img src="{{ $job->image ? asset('storage/' . $job->image) : asset('images/no-image.png') }}" alt="" class="object-cover object-center w-16 h-16 rounded-full">
                 <div class="flex flex-col gap-1">
                     <div class="text-xl font-medium leading-none text-slate-900 dark:text-white">{{ $job->title }}</div>
                     <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">{{ $job->company }}</p>

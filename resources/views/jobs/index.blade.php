@@ -43,7 +43,7 @@
                 </div>
 
                 {{-- pagination --}}
-                <div class="p-4 mt-8">
+                <div class="py-4 mt-8">
                     {{ $jobs->links() }}
                 </div>
             @endif

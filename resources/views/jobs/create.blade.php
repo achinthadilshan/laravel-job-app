@@ -7,7 +7,7 @@
             <h2 class="text-2xl font-semibold text-center text-slate-900 dark:text-white">Create a Job</h2>
             <p class="mb-6 text-center text-slate-600 dark:text-slate-400">Establish a job posting to identify the most
                 qualified candidate for your esteemed organization.</p>
-            <form action="{{ route('jobs.store') }}" method="POST">
+            <form action="{{ route('jobs.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="grid gap-4 mb-6 md:grid-cols-2">
                     <div class="md:col-span-2">
@@ -29,13 +29,14 @@
 
                         <p class="mt-1 text-sm text-red-500">{{ $errors->first('company') }}</p>
                     </div>
-                    {{-- <div>
-                        <label class="block mb-2 text-sm font-medium text-slate-900 dark:text-white" for="logo">Company
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-slate-900 dark:text-white" for="image">Company
                             Logo</label>
                         <input
                             class="block w-full text-sm border rounded-lg cursor-pointer text-slate-900 border-slate-300 bg-slate-50 dark:text-slate-400 focus:outline-none dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400"
-                            id="logo" name="logo" type="file">
-                    </div> --}}
+                            id="image" name="image" type="file">
+                        <p class="mt-1 text-sm text-red-500">{{ $errors->first('image') }}</p>
+                    </div>
                     <div>
                         <label for="email"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Email</label>

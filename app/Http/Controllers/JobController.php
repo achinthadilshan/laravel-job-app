@@ -11,7 +11,7 @@ class JobController extends Controller
     public function index()
     {
         return view('jobs.index', [
-            'jobs' => Job::Latest()->filter(request(['tag', 'search']))->paginate(8)
+            'jobs' => Job::Latest()->filter(request(['tag', 'search']))->paginate(10)
         ]);
     }
 
@@ -32,7 +32,14 @@ class JobController extends Controller
     // store job data
     public function store(StoreJobRequest $request)
     {
-        Job::create($request->validated());
+        $validatedData = $request->validated();
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $validatedData['image'] = $imagePath;
+        }
+
+        Job::create($validatedData);
 
         return redirect()->route('jobs.index')->with('status', 'Job created successfully!');
     }

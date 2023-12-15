@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title', 255);
-            $table->string('image', 255)->default('https://picsum.photos/200');
+            $table->string('image', 255)->nullable();
             $table->string('company', 255);
             $table->string('email', 255);
             $table->string('website', 255);
