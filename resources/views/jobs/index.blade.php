@@ -43,38 +43,9 @@
                 </div>
 
                 {{-- pagination --}}
-                <nav aria-label="Page navigation example">
-                    <ul class="inline-flex justify-end w-full h-10 mt-8 -space-x-px text-base">
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 ms-0 border-e-0 rounded-s-lg hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">Previous</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">1</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">2</a>
-                        </li>
-                        <li>
-                            <a href="#" aria-current="page"
-                                class="flex items-center justify-center h-10 px-4 text-blue-600 border border-slate-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-700 dark:text-white">3</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">4</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">5</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center justify-center h-10 px-4 leading-tight bg-white border text-slate-500 border-slate-300 rounded-e-lg hover:bg-slate-100 hover:text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="p-4 mt-8">
+                    {{ $jobs->links() }}
+                </div>
             @endif
         </div>
     </section>
