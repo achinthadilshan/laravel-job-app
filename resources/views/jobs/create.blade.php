@@ -13,7 +13,7 @@
                     <div class="md:col-span-2">
                         <label for="title" class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Job
                             Title</label>
-                        <input type="text" name="title" id="title"
+                        <input type="text" name="title" id="title" value="{{ old('title') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                             placeholder="Ex: Senior Software Engineer">
 
@@ -23,7 +23,7 @@
                     <div>
                         <label for="company"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Company</label>
-                        <input type="text" name="company" id="company"
+                        <input type="text" name="company" id="company" value="{{ old('company') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                             placeholder="Ex: Apple Inc.">
 
@@ -39,7 +39,7 @@
                     <div>
                         <label for="email"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Email</label>
-                        <input type="email" name="email" id="email"
+                        <input type="email" name="email" id="email" value="{{ old('email') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                             placeholder="Ex: test@test.com">
 
@@ -48,7 +48,7 @@
                     <div>
                         <label for="website"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Website</label>
-                        <input type="text" name="website" id="website"
+                        <input type="text" name="website" id="website" value="{{ old('website') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                             placeholder="Ex: www.test.com">
 
@@ -57,16 +57,16 @@
                     <div>
                         <label for="city"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">City</label>
-                        <input type="text" name="city" id="city"
+                        <input type="text" name="city" id="city" value="{{ old('city') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
-                            placeholder="Ex: www.test.com">
+                            placeholder="Ex: New York">
 
                         <p class="mt-1 text-sm text-red-500">{{ $errors->first('city') }}</p>
                     </div>
                     <div>
                         <label for="type"
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Type</label>
-                        <select id="type" name="type"
+                        <select id="type" name="type" value="{{ old('type') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500">
                             <option selected disabled>Choose...</option>
                             <option value="fulltime">Fulltime</option>
@@ -79,7 +79,7 @@
                     <div class="md:col-span-2">
                         <label for="tags" class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Tags
                             (Comma separated)</label>
-                        <input type="text" name="tags" id="tags"
+                        <input type="text" name="tags" id="tags" value="{{ old('tags') }}"
                             class="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-lg focus:ring-slate-600 focus:border-slate-600 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
                             placeholder="Ex: Laravel, Java, Python">
 
@@ -90,7 +90,7 @@
                             class="block mb-2 text-sm font-medium text-slate-900 dark:text-white">Description</label>
                         <textarea id="description" name="description" rows="6"
                             class="block p-2.5 w-full text-sm text-slate-900 bg-slate-50 rounded-lg border border-slate-300 focus:ring-slate-500 focus:border-slate-500 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
-                            placeholder="Write a job description here..."></textarea>
+                            placeholder="Write a job description here...">{{ old('description') }}</textarea>
 
                         <p class="mt-1 text-sm text-red-500">{{ $errors->first('description') }}</p>
                     </div>
