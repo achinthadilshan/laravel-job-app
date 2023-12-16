@@ -43,7 +43,7 @@ class JobController extends Controller
 
         Job::create($validatedData);
 
-        return redirect()->route('jobs.index')->with('status', 'Job created successfully!');
+        return redirect(route('jobs.index'))->with('status', 'Job created successfully!');
     }
 
     // Show Edit Form
@@ -73,13 +73,13 @@ class JobController extends Controller
 
         $job->update($validatedData);
 
-        return redirect()->route('jobs.show', ['job' => $job])->with('status', 'Job updated successfully!');
+        return redirect(route('jobs.show', ['job' => $job]))->with('status', 'Job updated successfully!');
     }
 
     // Delete Job
     public function destroy(Job $job)
     {
         $job->delete();
-        return redirect()->route('jobs.index')->with('status', 'Job deleted successfully!');
+        return redirect(route('jobs.index'))->with('status', 'Job deleted successfully!');
     }
 }

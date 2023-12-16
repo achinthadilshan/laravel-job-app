@@ -29,7 +29,7 @@
                     <a href="#" class="block px-3 py-2 text-slate-900 dark:text-white ">Sign In</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{route('register')}}"
                         class="block px-3 py-2 bg-transparent rounded-md dark:text-white text-slate-900 md:text-white md:bg-slate-700">Sign
                         Up</a>
                 </li>

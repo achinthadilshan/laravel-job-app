@@ -33,7 +33,7 @@
         @include('partials.navbar')
 
         {{-- content --}}
-        <div class="mt-[4.5rem] body-height">
+        <div class="mt-[4.5rem] grid body-height">
             @yield('content')
         </div>
 
