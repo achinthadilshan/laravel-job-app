@@ -10,11 +10,22 @@
                     <i class="bi bi-arrow-left"></i>
                     Back
                 </a>
-                <a href="{{ route('jobs.edit', ['job' => $job]) }}"
-                    class="flex items-center justify-center gap-2 px-4 py-2 rounded-md dark:text-white text-slate-900 w-fit dark:bg-slate-800 bg-slate-200">
-                    <i class="bi bi-pencil-fill"></i>
-                    Edit
-                </a>
+                <div class="flex items-center gap-2">
+                    <a href="{{ route('jobs.edit', ['job' => $job]) }}"
+                        class="flex items-center justify-center gap-2 px-4 py-2 rounded-md dark:text-white text-slate-900 w-fit dark:bg-slate-800 bg-slate-200">
+                        <i class="bi bi-pencil-fill"></i>
+                        Edit
+                    </a>
+                    <form method="POST" action="{{ route('jobs.destroy', ['job' => $job]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="flex items-center justify-center gap-2 px-4 py-2 rounded-md dark:text-white text-slate-900 w-fit dark:bg-slate-800 bg-slate-200">
+                            <i class="bi bi-trash-fill"></i>
+                            Delete
+                        </button>
+                    </form>
+                </div>
             </div>
             <div class="flex flex-col gap-3 md:flex-row md:gap-4">
                 <img src="{{ $job->image ? asset('storage/' . $job->image) : asset('images/no-image.png') }}" alt=""
