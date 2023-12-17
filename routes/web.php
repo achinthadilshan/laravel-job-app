@@ -28,19 +28,19 @@ use App\Http\Controllers\UserController;
 Route::get('/', [JobController::class, 'index'])->name('jobs.index');
 
 // Job Create Form
-Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create');
+Route::get('/jobs/create', [JobController::class, 'create'])->name('jobs.create')->middleware('auth');
 
 // Store Job Data
-Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
+Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store')->middleware('auth');
 
 // Show Edit Form
-Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('jobs.edit');
+Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('jobs.edit')->middleware('auth');
 
 // Update Job
-Route::put('/jobs/{job}', [JobController::class, 'update'])->name('jobs.update');
+Route::put('/jobs/{job}', [JobController::class, 'update'])->name('jobs.update')->middleware('auth');
 
 // Delete Job
-Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('jobs.destroy');
+Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('jobs.destroy')->middleware('auth');
 
 // Single Job
 Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
@@ -52,16 +52,16 @@ Route::get('/jobs/{job}', [JobController::class, 'show'])->name('jobs.show');
 */
 
 // Show Register Form
-Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 
 // Create New User
 Route::post('/register', [UserController::class, 'store']);
 
 // Show Login Form
-Route::get('/logout', [UserController::class, 'login'])->name('login');
+Route::get('/logout', [UserController::class, 'login'])->name('login')->middleware('guest');
 
 // Authenticate User
 Route::post('/authenticate', [UserController::class, 'authenticate']);
 
 // Logout User
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');

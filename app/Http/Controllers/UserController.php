@@ -32,18 +32,20 @@ class UserController extends Controller
     }
 
     // Show Login Form
-    public function login() {
+    public function login()
+    {
         return view('auth.login');
     }
 
     // Authenticate User
-    public function authenticate(Request $request) {
+    public function authenticate(Request $request)
+    {
         $validatedData = $request->validate([
-            'email'=>'required|email',
-            'password'=>'required',
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
-        if(auth()->attempt($validatedData)) {
+        if (auth()->attempt($validatedData)) {
             $request->session()->regenerate();
 
             return redirect(route('jobs.index'))->with('status', 'You\'re logged in successfully!');
