@@ -24,4 +24,10 @@ class Job extends Model
                 ->orWhere('tags', 'LIKE', $searchTerm);;
         }
     }
+
+    // Relationship to User
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
