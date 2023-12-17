@@ -41,6 +41,8 @@ class JobController extends Controller
             $validatedData['image'] = $imagePath;
         }
 
+        $validatedData['user_id'] = auth()->id();
+
         Job::create($validatedData);
 
         return redirect(route('jobs.index'))->with('status', 'Job created successfully!');
@@ -58,6 +60,11 @@ class JobController extends Controller
     // Note: we can use same "StoreJobRequest" here since we don't have unique fields
     public function update(StoreJobRequest $request, Job $job)
     {
+        // Make sure logged in user is owner
+        if ($job->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action!');
+        }
+
         $validatedData = $request->validated();
 
         if ($request->hasFile('image')) {
@@ -79,7 +86,21 @@ class JobController extends Controller
     // Delete Job
     public function destroy(Job $job)
     {
+        // Make sure logged in user is owner
+        if ($job->user_id != auth()->id()) {
+            abort(403, 'Unauthorized Action!');
+        }
+
         $job->delete();
         return redirect(route('jobs.index'))->with('status', 'Job deleted successfully!');
+    }
+
+    // Show Manage Jobs Page
+    public function manage()
+    {
+
+        return view('jobs.manage', [
+            'jobs' => auth()->user()->jobs()->get()
+        ]);
     }
 }

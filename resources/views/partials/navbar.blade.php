@@ -29,11 +29,11 @@
                             a Job</a>
                     </li>
                     <li>
-                        <a href="" class="block px-3 py-2 text-slate-900 dark:text-white ">My
+                        <a href="{{ route('jobs.manage') }}" class="block px-3 py-2 text-slate-900 dark:text-white ">My
                             Jobs</a>
                     </li>
                     <li>
-                        <a href="" class="block px-3 py-2 text-slate-900 dark:text-white ">Profile</a>
+                        <a href="{{ route('profile') }}" class="block px-3 py-2 text-slate-900 dark:text-white ">Profile</a>
                     </li>
                     <li>
                         <form method="POST" action="/logout">

@@ -64,4 +64,13 @@ class UserController extends Controller
 
         return redirect(route('jobs.index'))->with('status', 'You have been logged out successfully!');
     }
+
+    // Show Profile Page
+    public function profile()
+    {
+        return view('auth.profile', [
+            'user' => auth()->user(),
+            'jobs' => auth()->user()->jobs()->get(),
+        ]);
+    }
 }
